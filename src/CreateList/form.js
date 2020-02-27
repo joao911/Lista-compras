@@ -15,7 +15,7 @@ class form extends Component{
        price:'', 
     }
     handleChange = (event) =>{
-        this.state({[event.target.name]:event.target.value})
+        this.setState({[event.target.name]:event.target.value})
     }
     render(){
         return(
