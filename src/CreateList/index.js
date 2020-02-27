@@ -1,29 +1,33 @@
-import React from 'react'
-import Checkbox from '@material-ui/core/Checkbox'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
+import ListItem from './listItem'
 import Form from './form'
-import CustomCard from '../commom/CustomCard'
-
-
-
+import { Creators as ListAction } from '../store/actions/list'
 import './List.css'
 
-
-
-const CreateList = () => (
-    <div className="page-container">
-        <Form />
-        <div className="list-items-container">
-            <CustomCard
-            Link =""
-            containerClass="list-item"
-            >
-                
-                <div className="list-item-header">
-
+class CreateList extends Component {
+    addProduct =(product, list)=>[
+        this.props.addProduct(product, list)
+    ]
+    render() {
+        return (
+            <div className="page-container">
+                <Form addProduct={this.addProduct} />
+                <div className="list-items-container">
+                    <ListItem />
                 </div>
-            </CustomCard>
-        </div>
-    </div>
-)
-export default CreateList;
+            </div>
+        )
+    }
+}
+
+
+const mapSateteToProps = state => ({
+    list: state.list
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators(ListAction, dispatch)
+
+export default connect(mapSateteToProps, mapDispatchToProps)(CreateList);

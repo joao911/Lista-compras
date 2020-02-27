@@ -9,6 +9,7 @@
   .card-content {
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
   .card-footer{
       height: 40px;
@@ -21,4 +22,7 @@
       font-size: 12px;
       font-weight: bolder;
       color: #7575;
+  }
+  .card-image{
+    object-fit: cover;
   }
