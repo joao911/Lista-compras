@@ -4,19 +4,21 @@ import { bindActionCreators } from 'redux'
 
 import ListItem from './listItem'
 import Form from './form'
-import { Creators as ListAction } from '../store/actions/list'
+import { Creators as ListActions } from '../store/actions/list'
 import './List.css'
 
 class CreateList extends Component {
-    addProduct =(product, list)=>[
+
+    addProduct =(product, list)=>{
         this.props.addProduct(product, list)
-    ]
+    }
     render() {
         return (
             <div className="page-container">
                 <Form addProduct={this.addProduct} />
+
                 <div className="list-items-container">
-                    <ListItem />
+                  {this.props.list.items.map(item=><ListItem item={item} key={item.product}/>)} 
                 </div>
             </div>
         )
@@ -26,8 +28,8 @@ class CreateList extends Component {
 
 const mapSateteToProps = state => ({
     list: state.list
-})
+});
 
-const mapDispatchToProps = dispatch => bindActionCreators(ListAction, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators(ListActions, dispatch)
 
 export default connect(mapSateteToProps, mapDispatchToProps)(CreateList);
