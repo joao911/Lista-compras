@@ -3,6 +3,10 @@ import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import { InputAdornment } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+
+import {Creators as FormActions} from '../store/actions/form'
 
 
 
@@ -105,5 +109,10 @@ class form extends Component {
         )
     }
 }
+const mapStateToProps = state => ({
+    form: state.form
+})
 
-export default form;
+const mapDispatchToProps = dispatch => bindActionCreators(FormActions, dispatch)
+
+export default connect(mapStateToProps,mapDispatchToProps)(form);

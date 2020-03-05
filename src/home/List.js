@@ -5,18 +5,19 @@ import ListFooter from './ListFooter'
 import CustomCard from '../commom/CustomCard'
 import ListItem from './ListItem'
 import './List.css'
-const List = () => (
-    <CustomCard  link="/lista"containerClass='list-container'
-    link="/lista"
-        footer={ <ListFooter/>
+import { checkPropTypes } from 'prop-types'
+const List = (props) => (
+    <CustomCard link="/lista" containerClass='list-container'
+        link="/lista"
+        footer={<ListFooter total={props.total} />
         }
     >
         <div>
-            <p className="title">Mês</p>
+            <p className="title">{props.list}</p>
             <div className="list-card-body">
-                 <ListItem icon={faShoppingBasket} text="1 Item(s) Reatante"/>
-                 <ListItem icon={faCheck} text="2 Item(s) Comprados"/>
-              
+                <ListItem icon={faShoppingBasket} text={`${props.openedItems} Item(s) Restante`} />
+                <ListItem icon={faCheck} text={`${props.closedItems} Item (s) comprados`} />
+
             </div>
         </div>
     </CustomCard>
