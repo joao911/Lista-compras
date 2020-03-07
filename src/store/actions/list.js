@@ -1,7 +1,10 @@
-export const Types ={
+export const Types = {
     ADD_PRODUCT: 'ADD_PRODUCT',
-    DELETE_PRODUCT :'DELETE_PRODUCT',
-    TOGGLE_PRODUCT :'TOGGLE_PRODUCT'
+    DELETE_PRODUCT: 'list/DELETE_PRODUCT',
+    TOGGLE_PRODUCT: 'list/TOGGLE_PRODUCT',
+    UPDATE_PRODUCT: 'list/UPDATE-PRODUCT',
+    NEW_LIST: 'list/NEW_LIST'
+
 }
 export const Creators = {
     addProduct: (product, list) => ({
@@ -10,14 +13,26 @@ export const Creators = {
         list,
     }),
 
-    deleteProduct: productId =>({
+    deleteProduct: productId => ({
         type: Types.DELETE_PRODUCT,
         productId
     }),
 
-    toggleProduct : productId =>({
+    toggleProduct: productId => ({
         type: Types.TOGGLE_PRODUCT,
         productId
+    }),
+
+    updateProduct: (product, list) => ({
+        type: Types.UPDATE_PRODUCT,
+        product,
+        list
+    }),
+    
+    newList:() =>({
+        type: Types.NEW_LIST
     })
+     
+    
 }
 

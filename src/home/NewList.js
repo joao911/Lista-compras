@@ -1,10 +1,10 @@
 import React from 'react'
 import Customcard from '../commom/CustomCard'
-const NewList = () => (
+const NewList = (props) => (
     <Customcard containerClass=' new-list-container'
         link="/lista"
     >
-        <div>
+        <div onClick={props.newList}>
             <p className="title"> Adicionar Listas!!</p>
         </div>
     </Customcard>
