@@ -40,6 +40,7 @@ export default function list(state = initialState, action) {
                         list: action.list,
                         items:updateProduct(state.items, action.product)
                     }
+                    
 
         default:
             return state;
@@ -68,7 +69,7 @@ function toggleItem(items, productId){
 }
 
 function getDate(){
-    const date = new date();
+    const date = new Date();
     const options = {year: 'numeric', month: '2-digit', day: '2-digit'}
     return date.toLocaleDateString('pt-br', options)
 }

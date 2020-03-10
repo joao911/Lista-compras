@@ -2,9 +2,10 @@ import React from 'react'
 import Customcard from '../commom/CustomCard'
 const NewList = (props) => (
     <Customcard containerClass=' new-list-container'
-        link="/lista"
+        link="/lista/novo"
+        action={props.NewList}
     >
-        <div onClick={props.newList}>
+        <div>
             <p className="title"> Adicionar Listas!!</p>
         </div>
     </Customcard>

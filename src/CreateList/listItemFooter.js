@@ -1,16 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
-import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import {Creators as FormActions} from '../store/actions/form'
+import { Creators as FormActions } from '../store/actions/form'
 
 const ListItemFooter = (props) => (
     <div className="list-card-footer">
         <div className="list-card-footer-actions">
             <FontAwesomeIcon
-            onClick={() => props.startUpdate(props.item)}
+                onClick={() => props.startUpdate(props.list, props.item)}
                 icon={faPen}
                 color="#00b0ff"
                 size="1x"

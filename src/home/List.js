@@ -8,7 +8,7 @@ import './List.css'
 import { checkPropTypes } from 'prop-types'
 const List = (props) => (
     <CustomCard link="/lista" containerClass='list-container'
-        link="/lista"
+        link="/lista/edicao"
         footer={<ListFooter total={props.total} />
         }
     >
