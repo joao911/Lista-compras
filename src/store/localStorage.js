@@ -10,7 +10,7 @@ export const loadState = () => {
         return undefined
     }
 }
-export const savestate = state => {
+export const saveState = state => {
     try {
         const localStorageState = JSON.stringify(state)
         localStorage.setItem('list', localStorageState)

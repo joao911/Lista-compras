@@ -5,7 +5,7 @@ export const Types = {
     UPDATE_PRODUCT: 'list/UPDATE-PRODUCT',
     NEW_LIST: 'list/NEW_LIST',
     GET_IMAGE_SUCCSESS: 'list/GET_IMAGE_SUCCSESS',
-    GET_IMAGE_FAIL: 'list/GET_IMAGE_FAIL'
+    GET_IMAGE_FAILULE: 'list/GET_IMAGE_FAILURE'
 
 }
 export const Creators = {
@@ -41,8 +41,8 @@ export const Creators = {
         img
     }),
 
-    getImageFail: (product, img) => ({
-        type: Types.GET_IMAGE_FAIL,
+    getImageFailure: (product, img) => ({
+        type: Types.GET_IMAGE_FAILULE,
         product,
         img
     })

@@ -37,7 +37,7 @@ export default function list(state = initialState, action) {
                 items: updateProduct(state.items, action.product)
             }
         case Types.GET_IMAGE_SUCCSESS:
-        case Types.GET_IMAGE_FAIL:
+        case Types.GET_IMAGE_FAILULE:
             return {
                 ...state,
                 items: [
@@ -79,11 +79,11 @@ function toggleItem(items, productId) {
     ];
 }
 
-function getDate() {
+function getDate(){
     const date = new Date();
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
-    return date.toLocaleDateString('pt-br', options)
-}
+    const options = {year: 'numeric', month: '2-digit', day: '2-digit'};
+    return date.toLocaleDateString('pt-BR', options);
+  }
 // Essas funçoes vão fazer os items do hoem funcionar items restantes, items comprados, e total
 // obs todas foram criadas ultilizando o componente creatorSelect do reselect
 
